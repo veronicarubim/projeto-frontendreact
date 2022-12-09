@@ -49,8 +49,7 @@ const Produtos = () => {
         })
         if (findItemCarrinho) { 
                 findItemCarrinho.qtd++ 
-                findItemCarrinho.preco += findItemProdutos.preco
-                copiaCarrinho.push(findItemProdutos)
+                /* findItemCarrinho.preco += findItemProdutos.preco */
             } else {
                 findItemProdutos.qtd = 1
                 copiaCarrinho.push(findItemProdutos)
