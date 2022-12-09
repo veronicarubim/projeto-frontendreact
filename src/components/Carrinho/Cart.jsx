@@ -30,6 +30,11 @@ const Carrinho = () => {
       findItem.qtd--
       setCarrinho([...carrinho])}
     }
+
+    let total = 0
+    globalState.forEach(item => {
+        total = total + item.preco * item.qtd
+    }) 
         
   return (
     <CartStyle>
@@ -51,7 +56,7 @@ const Carrinho = () => {
         )) 
         :null
         }
-        <p>Total: {}</p>
+        <p>Total: {total}</p>
     </section>
     </CartStyle>
   )
