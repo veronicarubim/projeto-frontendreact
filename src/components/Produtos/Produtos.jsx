@@ -49,7 +49,6 @@ const Produtos = () => {
         })
         if (findItemCarrinho) { 
                 findItemCarrinho.qtd++ 
-                /* findItemCarrinho.preco += findItemProdutos.preco */
             } else {
                 findItemProdutos.qtd = 1
                 copiaCarrinho.push(findItemProdutos)
@@ -97,7 +96,7 @@ const Produtos = () => {
                 return produto.descricao.toLowerCase().includes(buscaTipo.toLowerCase())
             })
             .filter((produto) => {
-                if (preco === 1501) {
+                if (preco === 1500) {
                     return produto.preco
                 } else if (preco >= produto.preco) {
                     return produto.preco

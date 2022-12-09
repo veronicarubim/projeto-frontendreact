@@ -42,11 +42,13 @@ const Carrinho = () => {
         <h1>Carrinho de Compras</h1>
         {
         globalState? globalState.map((produto) => (
-          <div key={produto.index}> 
+          <div id="cart" key={produto.index}> 
+              <div>
               <p>{produto.nome}</p> 
-              <p>{produto.preco}</p>
+              <p>{produto.preco} U$</p>
               <p>{produto.descricao}</p>
               <p>{produto.qtd}</p>
+              </div>
               <div>
               <button onClick={() => removerDoCarrinho(produto.id)}>Excluir</button>
               <button onClick={() => addUm(produto.id)}>+</button>
@@ -56,7 +58,8 @@ const Carrinho = () => {
         )) 
         :null
         }
-        <p>Total: {total}</p>
+        <p>Total: {total} US$</p>
+        <button> Finalizar compra</button>
     </section>
     </CartStyle>
   )

@@ -8,6 +8,6 @@ export const FooterStyle = styled.div`
     justify-content: center;
     column-gap: 2%;
     background-color: #874694;
-    height: 60vh;
+    height: 40vh;
     }
 `
