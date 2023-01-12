@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import { MyContext } from '../../provider/provider'
-import { CartStyle } from './styles'
+import { Button, ButtonQt, Card, CartStyle, DivInfo, Divisoria, DivTitle, Imagem, Title, Total } from './styles'
 
 const Carrinho = () => {
 
@@ -38,30 +38,39 @@ const Carrinho = () => {
         
   return (
     <CartStyle>
-    <section>
-        <h1>Carrinho de Compras</h1>
+
+      <DivTitle>
+      <Title>Seu carrinho</Title>
+      </DivTitle>
+      <Divisoria></Divisoria>
         {
         globalState? globalState.map((produto) => (
-          <div id="cart" key={produto.index}> 
+          <Card key={produto.index}> 
               <div>
-              <p>{produto.nome}</p> 
-              <p>{produto.preco} U$</p>
-              <p>{produto.descricao}</p>
-              <p>{produto.qtd}</p>
+                <Imagem src={produto.imagem}/>
+                <p>{produto.nome}</p> 
+                <p>{produto.preco} U$</p>
+                <p>{produto.descricao}</p>
+                <p>{produto.qtd}</p>
               </div>
               <div>
-              <button onClick={() => removerDoCarrinho(produto.id)}>Excluir</button>
-              <button onClick={() => addUm(produto.id)}>+</button>
-              <button onClick={() => menosUm(produto.id)}>-</button>
+                <Button onClick={() => removerDoCarrinho(produto.id)}>Excluir</Button>
+                <ButtonQt onClick={() => addUm(produto.id)}>+</ButtonQt>
+                <ButtonQt onClick={() => menosUm(produto.id)}>-</ButtonQt>
               </div>
-           </div>
+           </Card>
         )) 
         :null
         }
-        <p>Total: {total} US$</p>
-        <button> Finalizar compra</button>
-    </section>
+        {
+        total > 0 ? (<DivInfo>
+        <Total>Total: {total} C$</Total>
+        <Button>Finalizar compra</Button>
+        </DivInfo>) : null}
+        
     </CartStyle>
+    
+    
   )
 }
 

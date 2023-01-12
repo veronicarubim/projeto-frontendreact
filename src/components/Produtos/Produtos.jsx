@@ -1,17 +1,26 @@
 import Produto from "./Produto/Produto";
 import {MyContext} from "../../provider/provider"
 import {useState, useContext} from "react";
-import {HomeStyle} from "./styles"
+import {HomeStyle, Filtro, DivInput, Input, ContainerCard, Select} from "./styles"
 import millenium from "../../assets/milleniumfalcon.jpg";
 import deathstar from "../../assets/deathstar.jpeg"
 import tiefighter from "../../assets/tiefighter.jpg"
 import xwing from "../../assets/xwing.jpg"
+import atact from "../../assets/atactwalker.png"
+import atat from "../../assets/atatwalker.png"
+import endurance from "../../assets/endurance.jpeg"
+import uwing from "../../assets/uwing.png"
 
 const produtos = [
     {id: 1, nome: "Millenium Falcon", descricao: "Espaçonave", preco: 800, qtd: 1, imagem: millenium},
     {id: 2, nome: "Death Star", descricao: "Base Espacial", preco: 1500, qtd: 1, imagem: deathstar},
     {id: 3, nome: "Tie Fighter", descricao: "Nave de Combate", preco: 400, qtd: 1, imagem: tiefighter},
     {id: 4, nome: "X-Wing", descricao: "Nave de Combate", preco: 500, qtd: 1, imagem: xwing},
+    {id: 5, nome: "AT-ACT Walker", descricao: "Veículo de Transporte Terrestre", preco: 1100, qtd: 1, imagem: atact},
+    {id: 6, nome: "AT-AT Walker", descricao: "Veículo de Transporte Terrestre", preco: 1100, qtd: 1, imagem: atat},
+    {id: 7, nome: "Endurance", descricao: "Destroyer", preco: 1400, qtd: 1, imagem: endurance},
+    {id: 8, nome: "U-Wing", descricao: "Nave de Transporte de Tropas", preco: 500 , qtd: 1, imagem: uwing}
+
 ];
 
 const Produtos = () => {
@@ -58,36 +67,33 @@ const Produtos = () => {
     }
 
     return (
+        <>
     <HomeStyle>
-    <main>
-        
-        <section className="filtros">  
+    
+            <DivInput>
+            <Input type="text" value={buscaNome} onChange={handleSearch} placeholder="Pesquisar por nome"></Input>
+            <Input type="text" value={buscaTipo} onChange={handleType} placeholder="Pesquisar por tipo"></Input>
+            </DivInput>
             
-            <h2>Filtros e Ordenação</h2>
-            <div>
-            <p>Pesquisa</p>
-            <input type="text" value={buscaNome} onChange={handleSearch} placeholder="Pesquisar por nome"></input>
-            <input type="text" value={buscaTipo} onChange={handleType} placeholder="Pesquisar por tipo"></input>
-            </div>
-
-            <p>Ordem de preço</p>
-            <select onChange={handleOrdem}>
+            <Filtro>  
+            <p>Créditos:</p>
+            <Select onChange={handleOrdem}>
             <option value="">Selecione...</option>
             <option value="crescente">Crescente</option>
             <option value="decrescente">Decrescente</option>
             <option value="padrao">Padrão</option>
-            </select>
+            </Select>
 
-            <p>Filtro de preço</p>
-            <select onChange={handlePriceFilter}>
+            {/* <p>Filtro de preço</p> */}
+            <Select onChange={handlePriceFilter}>
             <option value={''}>Selecione...</option>
-            <option value={500}>Até 500 U$</option>
-            <option value={1000}>Até 1000 U$</option>
-            <option value={1500}>Até 1500 U$</option>
-            </select>
-
-        </section>
-
+            <option value={500}>Até 500 C$</option>
+            <option value={1000}>Até 1000 C$</option>
+            <option value={1500}>Até 1500 C$</option>
+            </Select>
+            </Filtro>
+        </HomeStyle>
+        <ContainerCard>
             { 
             produtos.filter((produto) => {
                 return produto.nome.toLowerCase().includes(buscaNome.toLowerCase())
@@ -121,9 +127,10 @@ const Produtos = () => {
             .map((produto) => (
                 <Produto produto={produto} key={produto.index} noCarrinho={addAoCarrinho}/>
             ))}
-
-    </main>
-    </HomeStyle>
+            </ContainerCard>
+   
+    
+    </>
 )};
 
 
