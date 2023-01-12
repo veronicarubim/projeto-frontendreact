@@ -1,5 +1,7 @@
 # Projeto Frontend - E-commerce de Naves Espaciais
 
+<img src="https://pbs.twimg.com/media/FmTOT4zXoAcPURG?format=jpg&name=4096x4096"/>
+
 ## Objetivos
 
 Este projeto teve como objetivo construir um site que simula um e-commerce. Como tema, escolhi vender naves espaciais da saga Star Wars por créditos, a moeda fictícia do universo de George Lucas. 
