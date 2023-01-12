@@ -1,40 +1,24 @@
 import styled from "styled-components"
 
+export const Card = styled.div`
+  width: 244px;
+  height: 360px;
+  background-color: #1d1e1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+`
+
 export const CardStyle = styled.div `
 
-div {
-    
-    background-color: #efc3f8;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-section {
-    margin: 0;
-    padding: 0;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-  }
+padding: 2%;
 
   div:hover {
     transform: scale(1.1);
     transition-duration: 0.7s; 
-    background-color: #e89ff7;
-  }
-
-  img {
-    width: 230px;
-    border-radius: 12px;
-  }
-
-  img:hover {
-    transform: scale(1.1);
-    transition-duration: 0.7s; 
+    background-color: #4b4b4c;
   }
 
   p {
@@ -45,19 +29,18 @@ section {
   }
 
   button {
+    margin-bottom: 16px;
     width: 150px;
     height: 50px;
-    margin-top: 5px;
-    background-color: #874694;
-    color: white;
+    background-color: #FFBF00;
+    color: #010101;
     border: none;
     border-radius: 10px;
-    font-family: 'Trebuchet MS'
+    font-family: 'Trebuchet MS';
+    cursor: pointer;
   }
 
   button:hover {
-    transform: scale(1.1);
-    transition-duration: 0.5s; 
-    background-color: #4f2957;
+    background-color: #FF9900;
   }
 `;
