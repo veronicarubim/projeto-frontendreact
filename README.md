@@ -1,6 +1,6 @@
 # Projeto Frontend - E-commerce de Naves Espaciais
 
-<img src="https://pbs.twimg.com/media/FmTOT4zXoAcPURG?format=jpg&name=4096x4096"/>
+<img src="https://pbs.twimg.com/media/FoiA2zgX0AAOhfe?format=jpg&name=4096x4096"/>
 
 ## Objetivos
 
